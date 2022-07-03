@@ -24,7 +24,7 @@
 
 ### **_Getting Started_**
 
-##### A wire frame was created for a visual of the basic design and can be viewed here: [Wireframe](https://wireframe.cc/pro/edit/563443).
+##### A wireframe was created for a visual of the basic design and can be viewed here: [Wireframe](https://wireframe.cc/pro/edit/563443).
 
 ##### A Trello board was used to keep track of development progress and can be viewed here: [Trello](https://trello.com/b/11nsHsJ7/whack-a-mole-unit-1).
 
