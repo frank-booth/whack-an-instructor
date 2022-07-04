@@ -1,3 +1,67 @@
+body {
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.wallpapersafari.com%2F20%2F56%2FRBa2EX.png&f=1&nofb=1ttps://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp3228064.jpg&f=1&nofb=1');
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    min-height: 100%;
+}
+
 h1 {
     color: blue;
+    text-align:center;
 }
+
+#layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.board {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 125px);
+    grid-template-rows: repeat(3, 125px);
+    margin-top: 225px;
+    margin-bottom: 125px;
+    padding:20px;
+}
+
+.boxes {
+    background-image: url('https://pixabay.com/static/uploads/photo/2014/12/22/00/01/dirt-576619_960_720.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    height: 75px;
+    width: 125px;
+
+}
+
+#score-box {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    padding-left: 50px;
+
+}
+
+#score-title {
+    font-size: 36px;
+    text-align: center;
+    border-bottom: 5px solid white;
+}
+
+#score {
+    font-size:24px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+#timer {
+    font-size: 96px;
+    text-align: center;
+}
+
+
+
