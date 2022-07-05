@@ -34,7 +34,12 @@ h1 {
     background-position: bottom;
     height: 75px;
     width: 125px;
+    position: relative;
 
+}
+
+.moles {
+    position: absolute;
 }
 
 #score-box {
