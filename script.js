@@ -5,6 +5,7 @@ let timerDisplay = document.querySelector('#timer')
 let timerCount = 10
 let moles = document.querySelectorAll('.moles')
 timerDisplay.innerHTML = timerCount
+
 //functions
 const startGame = () => {}
 
@@ -16,7 +17,8 @@ const timer = setInterval(() => {
   }
 }, 1000)
 
-const moleSelection = () => {}
+const moleSelection = () => {
+  const moleLocal = Math.floor(Math.random() * 9)
+}
 
 //events
-timer()
