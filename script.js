@@ -4,29 +4,28 @@ let scoreDisplay = document.querySelector('#score')
 let timerDisplay = document.querySelector('#timer')
 let timerCount = 10
 let moles = document.querySelectorAll('.moles')
+let button = document.querySelector('button')
 
 timerDisplay.innerHTML = timerCount
-
+scoreDisplay.innerHTML = score
 //functions
 const startGame = () => {
-  timerCount = 10
-  score = 0
-  timer()
+  const timer = setInterval(() => {
+    moleSelection()
+    timerCount--
+    timerDisplay.innerHTML = timerCount
+    if (timerCount <= 0) {
+      clearInterval(timer)
+      timerDisplay.innerHTML = 'Game Over!'
+      timerDisplay.style.fontSize = '36px'
+    }
+  }, 1000)
 }
-
-const timer = setInterval(() => {
-  moleSelection()
-  timerCount--
-  timerDisplay.innerHTML = timerCount
-  if (timerCount <= 0) {
-    clearInterval(timer)
-    timerDisplay.innerHTML = 'Game Over!'
-    timerDisplay.style.fontSize = '36px'
-  }
-}, 1000)
-
 const moleReset = (num) => {
-  moles[num].style.display = 'none'
+  const clearMole = setTimeout(() => {
+    moles[num].style.display = 'none'
+    clearTimeout(clearMole)
+  }, 500)
 }
 
 const moleSelection = () => {
@@ -36,6 +35,7 @@ const moleSelection = () => {
     score++
   })
   scoreDisplay.innerHTML = score
+  moleReset(moleLocal)
 }
 
 //events

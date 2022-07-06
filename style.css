@@ -42,10 +42,10 @@ h1 {
     
 }
 
-.moles:before {
+.moles {
     position: absolute;
     animation-name: move; 
-    animation-duration: .5s;
+    animation-duration: .2s;
     animation-timing-function: ease-in-out;
     background-image: url('mole.png');
     background-size: 65%;
@@ -55,6 +55,7 @@ h1 {
     width: 125px; 
     display: none;
 }
+
 
 @keyframes move {
     0% {transform: translateY(60px);}
