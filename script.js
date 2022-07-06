@@ -10,6 +10,10 @@ timerDisplay.innerHTML = timerCount
 scoreDisplay.innerHTML = score
 //functions
 const startGame = () => {
+  score = 0
+  timerCount = 10
+  timerDisplay.innerHTML = timerCount
+  scoreDisplay.innerHTML = score
   const timer = setInterval(() => {
     moleSelection()
     timerCount--
@@ -25,7 +29,7 @@ const moleReset = (num) => {
   const clearMole = setTimeout(() => {
     moles[num].style.display = 'none'
     clearTimeout(clearMole)
-  }, 500)
+  }, 1000)
 }
 
 const moleSelection = () => {
