@@ -32,22 +32,24 @@ h1 {
 
 .boxes {
     position: relative;
-    background-image: url('https://pixabay.com/static/uploads/photo/2014/12/22/00/01/dirt-576619_960_720.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
     height: 75px;
     width: 125px;
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pinclipart.com%2Fpicdir%2Fbig%2F357-3573418_mole-image-mole-cartoon-png-clipart.png&f=1&nofb=1'),
+        url('https://pixabay.com/static/uploads/photo/2014/12/22/00/01/dirt-576619_960_720.png');
+    background-repeat: no-repeat, no-repeat;
+    background-size: 58%, cover;
+    background-position: center, bottom;
+    
 }
 
 .moles {
-    position: absolute;
-    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pinclipart.com%2Fpicdir%2Fbig%2F357-3573418_mole-image-mole-cartoon-png-clipart.png&f=1&nofb=1');
+    position: absolute; 
+    /* background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pinclipart.com%2Fpicdir%2Fbig%2F357-3573418_mole-image-mole-cartoon-png-clipart.png&f=1&nofb=1');
     background-size: 58%;
     background-repeat: no-repeat;
     background-position: center;
     height: 75px;
-    width: 125px;
+    width: 125px;   */
 }
 
 #score-box {
