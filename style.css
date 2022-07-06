@@ -26,32 +26,52 @@ h1 {
     margin-top: 225px;
     margin-bottom: 125px;
     padding:20px;
-    cursor: url('/assets/mallet.png');
+    cursor: url('mallet.png');
     
 }
 
 .boxes {
-    position: relative;
-    height: 75px;
+    position:relative;
+    height: 115px;
     width: 125px;
-    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pinclipart.com%2Fpicdir%2Fbig%2F357-3573418_mole-image-mole-cartoon-png-clipart.png&f=1&nofb=1'),
-        url('https://pixabay.com/static/uploads/photo/2014/12/22/00/01/dirt-576619_960_720.png');
-    background-repeat: no-repeat, no-repeat;
-    background-size: 58%, cover;
-    background-position: center, bottom;
+    background-image: url('dirt.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    overflow: hidden;
     
 }
 
 .moles {
-    position: absolute; 
-    /* background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pinclipart.com%2Fpicdir%2Fbig%2F357-3573418_mole-image-mole-cartoon-png-clipart.png&f=1&nofb=1');
-    background-size: 58%;
+    position: absolute;
+    animation-name: move; 
+    animation-duration: 1s;
+    background-image: url('mole.png');
+    background-size: 65%;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     height: 75px;
-    width: 125px;   */
+    width: 125px; 
+    display: none; 
 }
 
+@keyframes move {
+    0% {
+        transform: translateY(60px);
+    }
+    25% {
+        transform: trnaslateY(45px);
+    }
+    50% {
+        transform: translateY(30px);
+    }
+    75% {
+        transform: translateY(15px);
+    }
+    100%{
+        transform: translasteY(0);
+    }
+}
 #score-box {
     display: flex;
     flex-direction:column;

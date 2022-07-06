@@ -5,12 +5,14 @@ let timerDisplay = document.querySelector('#timer')
 let timerCount = 10
 let moles = document.querySelectorAll('.moles')
 timerDisplay.innerHTML = timerCount
+
 //functions
 const startGame = () => {}
 
 const timer = setInterval(() => {
   timerCount--
   timerDisplay.innerHTML = timerCount
+  moles[8].style.display = 'block'
   if (timerCount <= 0) {
     clearInterval(timer)
     timerDisplay.innerHTML = 'Game Over!'
