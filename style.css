@@ -42,34 +42,31 @@ h1 {
     
 }
 
-.moles {
+.moles:before {
     position: absolute;
     animation-name: move; 
-    animation-duration: 1s;
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out;
     background-image: url('mole.png');
     background-size: 65%;
     background-repeat: no-repeat;
     background-position: top;
     height: 75px;
     width: 125px; 
-    display: none; 
+    display: none;
 }
 
 @keyframes move {
-    0% {
-        transform: translateY(60px);
-    }
-    25% {
-        transform: trnaslateY(45px);
-    }
-    50% {
-        transform: translateY(30px);
-    }
-    75% {
-        transform: translateY(15px);
-    }
-    100%{
-        transform: translasteY(0);
+    0% {transform: translateY(60px);}
+    25% {transform: translateY(45px);}
+    50% {transform: translateY(30px);}
+    75% {transform: translateY(15px);}
+    100%{transform: translateY(0);}
+}
+
+@keyframes imageGone {
+    100% {
+        opacity: 0;
     }
 }
 #score-box {
