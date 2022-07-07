@@ -8,6 +8,7 @@ let button = document.querySelector('button')
 
 timerDisplay.innerHTML = timerCount
 scoreDisplay.innerHTML = score
+
 //functions
 const startGame = () => {
   score = 0
@@ -21,10 +22,11 @@ const startGame = () => {
     if (timerCount <= 0) {
       clearInterval(timer)
       timerDisplay.innerHTML = 'Game Over!'
-      timerDisplay.style.fontSize = '36px'
+      timerDisplay.style.fontSize = '60px'
     }
   }, 1000)
 }
+
 const moleReset = (num) => {
   const clearMole = setTimeout(() => {
     moles[num].style.display = 'none'

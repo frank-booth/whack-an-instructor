@@ -4,14 +4,23 @@ body {
     background-repeat: no-repeat;
     overflow: hidden;
     min-height: 100%;
-    
+    font-family: 'Henny Penny', cursive;
 }
 
 h1 {
-    color: blue;
+    color: #1E1011;
     text-align:center;
+    font-size: 48px
 }
 
+button {
+    margin-left: 75px;
+    padding: 5px;
+    font-size: 24px;
+    color:aliceblue;
+    background-color: #8B363A;
+    font-family: 'Henny Penny', cursive;
+}
 #layout {
     display: flex;
     flex-direction: row;
@@ -19,14 +28,16 @@ h1 {
 
 }
 .board {
+    cursor: url('mallet.png');
+    position: static;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(3, 125px);
     grid-template-rows: repeat(3, 125px);
-    margin-top: 225px;
+    margin-top: 125px;
     margin-bottom: 125px;
     padding:20px;
-    cursor: url('mallet.png');
+    
     
 }
 
@@ -47,11 +58,11 @@ h1 {
     animation-name: move; 
     animation-duration: .2s;
     animation-timing-function: ease-in-out;
-    background-image: url('mole.png');
+    background-image: url('test.png');
     background-size: 65%;
     background-repeat: no-repeat;
     background-position: top;
-    height: 75px;
+    height: 150px;
     width: 125px; 
     display: none;
 }
@@ -65,34 +76,29 @@ h1 {
     100%{transform: translateY(0);}
 }
 
-@keyframes imageGone {
-    100% {
-        opacity: 0;
-    }
-}
 #score-box {
     display: flex;
     flex-direction:column;
     justify-content: center;
     padding-left: 50px;
+    width: 200px;
 
 }
 
 #score-title {
-    font-size: 36px;
+    font-size: 48px;
     text-align: center;
-    border-bottom: 5px solid white;
+    border-bottom: 5px solid #8B363A;
 }
 
 #score {
-    font-size:24px;
-    padding-top: 20px;
-    padding-bottom: 50px;
+    font-size:60px;
+    padding-bottom: 10px;
     text-align: center;
 }
 
 #timer {
-    font-size: 96px;
+    font-size: 120px;
     text-align: center;
 }
 
