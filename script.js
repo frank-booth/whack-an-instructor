@@ -1,8 +1,8 @@
 // variables
 let score = 0
+let timerCount = 10
 let scoreDisplay = document.querySelector('#score')
 let timerDisplay = document.querySelector('#timer')
-let timerCount = 10
 let moles = document.querySelectorAll('.moles')
 let button = document.querySelector('button')
 
@@ -30,9 +30,10 @@ const countDown = () => {
       timerDisplay.style.color = '#BD1817'
     } else if (timerCount <= 0) {
       clearInterval(timer)
-      timerDisplay.innerHTML = 'Game Over!'
-      timerDisplay.style.fontSize = '45px'
-      timerDisplay.classList.remove('timerPulse')
+      gameOver(score)
+      // timerDisplay.innerHTML = 'Game Over!'
+      // timerDisplay.style.fontSize = '45px'
+      // timerDisplay.classList.remove('timerPulse')
     }
   }, 1000)
 }
@@ -54,5 +55,15 @@ const moleSelection = () => {
   moleReset(moleLocal)
 }
 
+const gameOver = (whacked) => {
+  timerDisplay.style.fontSize = '60px'
+  timerDisplay.classList.remove('timerPulse')
+  if (whacked >= 3) {
+    timerDisplay.innerHTML = 'Mole Killa!'
+    timerDisplay.classList.add('winnerTest')
+  } else {
+    timerDisplay.innerHTML = 'Nice Try'
+  }
+}
 //events
 button.addEventListener('click', startGame)
