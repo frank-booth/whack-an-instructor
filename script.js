@@ -10,6 +10,7 @@ timerDisplay.innerHTML = timerCount
 scoreDisplay.innerHTML = score
 
 //functions
+// starts game after button is clicke
 const startGame = () => {
   score = 0
   timerCount = 10
@@ -17,9 +18,11 @@ const startGame = () => {
   scoreDisplay.innerHTML = score
   timerDisplay.style.fontSize = '96px'
   timerDisplay.style.color = 'black'
+  timerDisplay.classList.remove('winnerTest')
   countDown()
 }
 
+// begins the timer count down from 10
 const countDown = () => {
   const timer = setInterval(() => {
     moleSelection()
@@ -30,14 +33,26 @@ const countDown = () => {
       timerDisplay.style.color = 'red'
     } else if (timerCount <= 0) {
       clearInterval(timer)
-      gameOver(score)
-      // timerDisplay.innerHTML = 'Game Over!'
-      // timerDisplay.style.fontSize = '45px'
+      gameOver()
       timerDisplay.classList.remove('timerPulse')
     }
   }, 1000)
 }
 
+//selects the random mole to peep
+const moleSelection = () => {
+  const moleLocal = Math.floor(Math.random() * 9)
+  moles[moleLocal].style.display = 'block'
+  moles[moleLocal].addEventListener('click', () => {
+    score++
+    scoreDisplay.innerHTML = score
+  })
+  console.log(moleLocal)
+  console.log(score)
+  moleReset(moleLocal)
+}
+
+//hides the mole that peeped
 const moleReset = (num) => {
   const clearMole = setTimeout(() => {
     moles[num].style.display = 'none'
@@ -45,24 +60,15 @@ const moleReset = (num) => {
   }, 1000)
 }
 
-const moleSelection = () => {
-  const moleLocal = Math.floor(Math.random() * 9)
-  moles[moleLocal].style.display = 'block'
-  moles[moleLocal].addEventListener('click', () => {
-    score++
-  })
-  scoreDisplay.innerHTML = score
-  moleReset(moleLocal)
-}
-
-const gameOver = (whacked) => {
+//when timer reaches 0, test responses dtermined by score
+const gameOver = () => {
   timerDisplay.style.fontSize = '60px'
   timerDisplay.style.color = '#2017CB'
   timerDisplay.style.fontWeight = 'bold'
-  if (whacked >= 6) {
+  if (score >= 6) {
     timerDisplay.innerHTML = 'Mole Killa!'
     timerDisplay.classList.add('winnerTest')
-  } else if (whacked < 6 && whacked > 0) {
+  } else if (score < 6 && score > 0) {
     timerDisplay.innerHTML = 'Nice Try'
   } else {
     timerDisplay.innerHTML = 'Moles Win!'
