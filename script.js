@@ -27,13 +27,13 @@ const countDown = () => {
     timerCount--
     timerDisplay.innerHTML = timerCount
     if (timerCount === 3) {
-      timerDisplay.style.color = '#BD1817'
+      timerDisplay.style.color = 'red'
     } else if (timerCount <= 0) {
       clearInterval(timer)
       gameOver(score)
       // timerDisplay.innerHTML = 'Game Over!'
       // timerDisplay.style.fontSize = '45px'
-      // timerDisplay.classList.remove('timerPulse')
+      timerDisplay.classList.remove('timerPulse')
     }
   }, 1000)
 }
@@ -57,13 +57,17 @@ const moleSelection = () => {
 
 const gameOver = (whacked) => {
   timerDisplay.style.fontSize = '60px'
-  timerDisplay.classList.remove('timerPulse')
-  if (whacked >= 3) {
+  timerDisplay.style.color = '#2017CB'
+  timerDisplay.style.fontWeight = 'bold'
+  if (whacked >= 6) {
     timerDisplay.innerHTML = 'Mole Killa!'
     timerDisplay.classList.add('winnerTest')
-  } else {
+  } else if (whacked < 6 && whacked > 0) {
     timerDisplay.innerHTML = 'Nice Try'
+  } else {
+    timerDisplay.innerHTML = 'Moles Win!'
   }
 }
+
 //events
 button.addEventListener('click', startGame)
