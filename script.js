@@ -19,10 +19,12 @@ const startGame = () => {
     moleSelection()
     timerCount--
     timerDisplay.innerHTML = timerCount
-    if (timerCount <= 0) {
+    if (timerCount === 3) {
+      timerDisplay.style.color = '#BD1817'
+    } else if (timerCount <= 0) {
       clearInterval(timer)
       timerDisplay.innerHTML = 'Game Over!'
-      timerDisplay.style.fontSize = '60px'
+      timerDisplay.style.fontSize = '45px'
     }
   }, 1000)
 }

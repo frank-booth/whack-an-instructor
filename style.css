@@ -5,6 +5,7 @@ body {
     overflow: hidden;
     min-height: 100%;
     font-family: 'Henny Penny', cursive;
+    
 }
 
 h1 {
@@ -14,31 +15,30 @@ h1 {
 }
 
 button {
-    margin-left: 75px;
-    padding: 5px;
-    font-size: 24px;
+    align-self: flex-end;
+    margin-bottom: 75px;
+    font-size: 20px;
     color:aliceblue;
     background-color: #8B363A;
     font-family: 'Henny Penny', cursive;
 }
+
 #layout {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    cursor: url(mallet.png), auto;
 
 }
 .board {
-    cursor: url('mallet.png');
-    position: static;
+    
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(3, 125px);
     grid-template-rows: repeat(3, 125px);
     margin-top: 125px;
     margin-bottom: 125px;
-    padding:20px;
-    
-    
+    padding:20px;   
 }
 
 .boxes {
@@ -67,7 +67,6 @@ button {
     display: none;
 }
 
-
 @keyframes move {
     0% {transform: translateY(60px);}
     25% {transform: translateY(45px);}
@@ -88,19 +87,16 @@ button {
 #score-title {
     font-size: 48px;
     text-align: center;
-    border-bottom: 5px solid #8B363A;
+    border-bottom: 5px solid #8b363a;
 }
 
 #score {
     font-size:60px;
-    padding-bottom: 10px;
     text-align: center;
 }
 
 #timer {
-    font-size: 120px;
+    font-size: 96px;
     text-align: center;
 }
-
-
 
