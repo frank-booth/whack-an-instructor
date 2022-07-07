@@ -15,8 +15,15 @@ const startGame = () => {
   timerCount = 10
   timerDisplay.innerHTML = timerCount
   scoreDisplay.innerHTML = score
+  timerDisplay.style.fontSize = '96px'
+  timerDisplay.style.color = 'black'
+  countDown()
+}
+
+const countDown = () => {
   const timer = setInterval(() => {
     moleSelection()
+    timerDisplay.classList.add('timerPulse')
     timerCount--
     timerDisplay.innerHTML = timerCount
     if (timerCount === 3) {
@@ -25,6 +32,7 @@ const startGame = () => {
       clearInterval(timer)
       timerDisplay.innerHTML = 'Game Over!'
       timerDisplay.style.fontSize = '45px'
+      timerDisplay.classList.remove('timerPulse')
     }
   }, 1000)
 }

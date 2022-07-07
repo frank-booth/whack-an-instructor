@@ -27,7 +27,7 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    cursor: url(mallet.png), auto;
+    
 
 }
 .board {
@@ -38,7 +38,8 @@ button {
     grid-template-rows: repeat(3, 125px);
     margin-top: 125px;
     margin-bottom: 125px;
-    padding:20px;   
+    padding:20px;
+    cursor: url(mallet.png), auto;   
 }
 
 .boxes {
@@ -75,6 +76,12 @@ button {
     100%{transform: translateY(0);}
 }
 
+@keyframes pulse {
+    100% {
+        transform: scale(1.8);
+    }
+}
+
 #score-box {
     display: flex;
     flex-direction:column;
@@ -98,5 +105,14 @@ button {
 #timer {
     font-size: 96px;
     text-align: center;
+    
 }
+
+.timerPulse {
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-iteration-count: 10;
+}
+
+
 
