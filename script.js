@@ -62,16 +62,16 @@ const moleReset = (num) => {
 
 //when timer reaches 0, test responses dtermined by score
 const gameOver = () => {
-  timerDisplay.style.fontSize = '60px'
+  timerDisplay.style.fontSize = '48px'
   timerDisplay.style.color = '#2017CB'
   timerDisplay.style.fontWeight = 'bold'
   if (score >= 6) {
-    timerDisplay.innerHTML = 'Mole Killa!'
+    timerDisplay.innerHTML = 'Student Becomes The Teacher!'
     timerDisplay.classList.add('winnerTest')
   } else if (score < 6 && score > 0) {
     timerDisplay.innerHTML = 'Nice Try'
   } else {
-    timerDisplay.innerHTML = 'Moles Win!'
+    timerDisplay.innerHTML = 'Jeremy Wins!'
   }
 }
 
