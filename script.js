@@ -5,6 +5,7 @@ let scoreDisplay = document.querySelector('#score')
 let timerDisplay = document.querySelector('#timer')
 let moles = document.querySelectorAll('.moles')
 let button = document.querySelector('button')
+let click = false
 
 timerDisplay.innerHTML = timerCount
 scoreDisplay.innerHTML = score
@@ -14,6 +15,7 @@ scoreDisplay.innerHTML = score
 const startGame = () => {
   score = 0
   timerCount = 10
+  click = false
   timerDisplay.innerHTML = timerCount
   scoreDisplay.innerHTML = score
   timerDisplay.style.fontSize = '96px'
@@ -44,10 +46,14 @@ const moleSelection = () => {
   const moleLocal = Math.floor(Math.random() * 9)
   moles[moleLocal].style.display = 'block'
   moles[moleLocal].addEventListener('click', () => {
+    click = true
+  })
+  if (click === true) {
     score++
     scoreDisplay.innerHTML = score
-  })
-  console.log(moleLocal)
+    click = false
+  }
+  //console.log(moleLocal)
   console.log(score)
   moleReset(moleLocal)
 }
